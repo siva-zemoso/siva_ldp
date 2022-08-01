@@ -18,15 +18,45 @@ console.log(str==num);
 console.log(typeof c);
 
 
-const promise = new Promise(function(resolve, resolve) {
+const  requestData =  (uId) => {
+  return new Promise((resolve, reject) => {
+    console.log('Fetching  the data!')
+    setTimeout(() => resolve("skc@gmail.com"), 4000)
+});
+
+  }
+
+
+  console.log("start");
+  const getData =   async() => {
+    try{
+      const email =  await requestData("skc");
+      console.log("Email id of the user id is: " + email);
+    }
+    catch (err){
+        console.log(err);
+
+    } 
+
+  }
+   
+  getData();
+  
+  console.log("siva");
+  console.log("end");
+
+/*
+const promise = new Promise((resolve, reject) => {
   // "Producing Code" (May take some time)
   
   resolve("SUCCESS"); // when successful
-  resolve("ERROR");  // when error
+  reject("ERROR");  // when error
   });
 
   promise.then(console.log("SUCCESS"))
   .catch(console.log("ERROR"));
+
+  
 
 const options = {
   method: 'GET',
@@ -38,4 +68,4 @@ request(options).
 
 then((response) => console.log(response.data)).
 catch( (error) => console.error(error));
-            
+    */

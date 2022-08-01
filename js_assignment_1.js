@@ -22,3 +22,9 @@ var  f2 = ()  => {
 }
 
 f2(f1);
+
+
+
+  const getFirstLetter = (firstName,lastName) => firstName[0]+lastName[0];
+
+  console.log(getFirstLetter('Roger','Waters'));
